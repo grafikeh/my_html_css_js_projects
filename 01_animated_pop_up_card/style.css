@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');;
+* { 
+    box-sizing: border-box; /* Tüm elementlerin box modelini 'border-box' olarak ayarlar. */
+  }
+  
+  body {
+    font-family: "Nunito", sans-serif; /* "Nunito" fontunu kullanır, eğer yoksa sans-serif'e düşer. */
+    display: flex; /* Flexbox düzeni uygular. */
+    align-items: center; /* İçeriği dikey olarak ortalar. */
+    justify-content: center; /* İçeriği yatay olarak ortalar. */
+    height: 100vh; /* Yüksekliği tam ekran yapar (100% viewport height). */
+    margin: 0; /* Tüm kenarlıkları sıfırlar. */
+    overflow: hidden; /* Taşan içeriği gizler. */
+  }
+  
+  .container {
+    display: flex; /* Konteyneri flexbox düzeni yapar. */
+    width: 80vw; /* Genişliği ekran genişliğinin %80'i yapar. */
+  }
+  
+  .panel {
+    background-size: auto 100%; /* Arka plan resmini dikeyde %100, yatayda otomatik olarak boyutlandırır. */
+    background-position: center; /* Arka plan resmini ortalar. */
+    background-repeat: no-repeat; /* Arka plan resminin tekrar etmesini engeller. */
+    height: 80vh; /* Panelin yüksekliğini ekran yüksekliğinin %80'i yapar. */
+    border-radius: 50px; /* Köşeleri 50px yuvarlatır. */
+    cursor: pointer; /* Fare üzerine geldiğinde işaretçiyi değiştirecek şekilde ayarlar. */
+    flex: 0.5; /* Panellerin başlangıçta eşit genişlikte olmasını sağlar. */
+    margin: 10px; /* Panellerin etrafına 10px boşluk ekler. */
+    position: relative; /* Konumlandırmayı içerisine göre ayarlamak için 'relative' yapar. */
+    transition: flex 0.7s ease-in; /* Genişlemenin 0.7 saniyede, yumuşak bir şekilde gerçekleşmesini sağlar. */
+  }
+  
+  .panel h3 {
+    font-size: 24px; /* Başlığın yazı boyutunu 24px yapar. */
+    position: absolute; /* Başlığı panelin içerisinde mutlak konumlandırır. */
+    bottom: 20px; /* Başlığı panelin altından 20px yukarıda konumlandırır. */
+    text-align: center; /* Metni ortalar. */
+    width: 100%; /* Başlığın genişliğini %100 yapar. */
+    margin: 0; /* Başlığın kenarlıklarını sıfırlar. */
+    opacity: 0; /* Başlığı başlangıçta görünmez yapar. */
+    color: white; /* Başlığın rengini beyaz yapar. */
+  }
+  
+  .panel.active {
+    flex: 5; /* Aktif olan paneli genişletir. */
+  }
+  
+  .panel.active h3 {
+    opacity: 1; /* Başlığı görünür hale getirir. */
+    transition: opacity 0.3s ease-in 0.4s; /* Opaklığı 0.3 saniyede, 0.4 saniyelik gecikmeyle değiştirir. */
+  }
+  
+  @media (max-width: 600px) { /* Ekran genişliği 600px'in altına düştüğünde geçerli olur. */
+    .container {
+      width: 100vw; /* Konteynerin genişliğini ekran genişliğinin %100'ü yapar. */
+    }
+    .panel:nth-of-type(4), .panel:nth-of-type(5) {
+      display: none; /* 4. ve 5. panelleri gizler. */
+    }
+  }

@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --line-border-fill: #8e0045; /* Çizgi dolu renk değişkeni tanımlanır. */
+    --line-border-empty: #b8bcc0; /* Çizgi boş renk değişkeni tanımlanır. */
+  }
+  
+  * {
+    box-sizing: border-box; /* Tüm elementlerin box modelini 'border-box' olarak ayarlar. */
+  }
+  
+  body {
+    font-family: "Inter", sans-serif; /* "Inter" fontunu kullanır, eğer yoksa sans-serif'e düşer. */
+    background-color: #f8f9fa; /* Arka plan rengini açık gri beyaz yapar. */
+    display: flex; /* Flexbox düzeni uygular. */
+    align-items: center; /* İçeriği dikey olarak ortalar. */
+    justify-content: center; /* İçeriği yatay olarak ortalar. */
+    height: 100vh; /* Yüksekliği tam ekran yapar (100% viewport height). */
+    margin: 0px; /* Tüm kenarlıkları sıfırlar. */
+    overflow: hidden; /* Taşan içeriği gizler. */
+  }
+  
+  .container {
+    text-align: center; /* İçeriği yatayda ortalar. */
+  }
+  
+  .progress-container {
+    display: flex; /* Flexbox düzeni uygular. */
+    justify-content: space-between; /* Elemanlar arasında eşit boşluk bırakır. */
+    position: relative; /* Konumlandırmayı içerisine göre ayarlamak için 'relative' yapar. */
+    margin-bottom: 30px; /* Alt kenardan 30px boşluk bırakır. */
+    width: 350px; /* Genişliği 350px yapar. */
+    max-width: 100%; /* Maksimum genişliği ekran genişliğinin %100'ü yapar. */
+  }
+  
+  .progress-container::before {
+    content: ""; /* İçerik olarak boş bir alan ekler. */
+    background-color: var(--line-border-empty); /* Arka plan rengini boş renk değişkeniyle ayarlar. */
+    height: 4px; /* Yüksekliği 4px yapar. */
+    width: 100%; /* Genişliği %100 yapar. */
+    position: absolute; /* Mutlak konumlandırma uygular. */
+    top: 50%; /* Yüksekliği dikeyde %50 konumlandırır. */
+    left: 0; /* Sol kenardan sıfır uzaklıkta konumlandırır. */
+    transform: translateY(-50%); /* Dikeyde tam ortalamak için kaydırır. */
+    z-index: -1; /* Diğer elemanların arkasında görünmesini sağlar. */
+    transition: 0.4s ease; /* Geçiş efektini 0.4 saniyede yumuşak bir şekilde uygular. */
+  }
+  
+  .progress {
+    background-color: var(--line-border-fill); /* Arka plan rengini dolu renk değişkeniyle ayarlar. */
+    height: 4px; /* Yüksekliği 4px yapar. */
+    width: 0%; /* Başlangıçta genişliği %0 yapar. */
+    position: absolute; /* Mutlak konumlandırma uygular. */
+    top: 50%; /* Yüksekliği dikeyde %50 konumlandırır. */
+    left: 0; /* Sol kenardan sıfır uzaklıkta konumlandırır. */
+    transform: translateY(-50%); /* Dikeyde tam ortalamak için kaydırır. */
+    z-index: -1; /* Diğer elemanların arkasında görünmesini sağlar. */
+    transition: 0.4s ease; /* Geçiş efektini 0.4 saniyede yumuşak bir şekilde uygular. */
+  }
+  
+  .circle {
+    background-color: white; /* Arka plan rengini beyaz yapar. */
+    border-radius: 50%; /* Çember şeklinde olmasını sağlar. */
+    height: 30px; /* Yüksekliği 30px yapar. */
+    width: 30px; /* Genişliği 30px yapar. */
+    display: flex; /* Flexbox düzeni uygular. */
+    align-items: center; /* İçeriği dikey olarak ortalar. */
+    justify-content: center; /* İçeriği yatay olarak ortalar. */
+    border: 3px solid var(--line-border-empty); /* 3px genişliğinde boş renk değişkeniyle sınır ekler. */
+    transition: 0.4s ease; /* Geçiş efektini 0.4 saniyede yumuşak bir şekilde uygular. */
+  }
+  
+  .circle.active {
+    border-color: var(--line-border-fill); /* Aktif durumda sınır rengini dolu renk değişkeniyle ayarlar. */
+  }
+  
+  .btn {
+    background-color: var(--line-border-fill); /* Arka plan rengini dolu renk değişkeniyle ayarlar. */
+    color: white; /* Metin rengini beyaz yapar. */
+    border: 0; /* Kenarlığı kaldırır. */
+    border-radius: 8px; /* Köşeleri 8px yuvarlatır. */
+    cursor: pointer; /* Fare üzerine geldiğinde işaretçiyi değiştirir. */
+    font-family: "Nunito"; /* "Nunito" fontunu kullanır. */
+    padding: 5px 12px; /* İç boşluk ekler (5px üst ve alt, 12px sağ ve sol). */
+  }
+  
+  .btn:active {
+    transform: scale(0.98); /* Düğmeye tıklandığında biraz küçülmesini sağlar. */
+  }
+  
+  .btn:focus {
+    outline: 0; /* Düğmeye odaklandığında kenarlık görünümünü kaldırır. */
+  }
+  
+  .btn:disabled {
+    background-color: var(--line-border-empty); /* Devre dışı durumda arka plan rengini boş renk değişkeniyle ayarlar. */
+  }
