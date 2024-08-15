@@ -29,7 +29,7 @@
     justify-content: space-between; /* Elemanlar arasında eşit boşluk bırakır. */
     position: relative; /* Konumlandırmayı içerisine göre ayarlamak için 'relative' yapar. */
     margin-bottom: 30px; /* Alt kenardan 30px boşluk bırakır. */
-    width: 350px; /* Genişliği 350px yapar. */
+    width: 360px; /* Genişliği 350px yapar. */
     max-width: 100%; /* Maksimum genişliği ekran genişliğinin %100'ü yapar. */
   }
   
