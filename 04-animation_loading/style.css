@@ -1,33 +1,73 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 * {
   box-sizing: border-box;
 }
+/* Tüm elementler için `box-sizing` özelliğini `border-box` olarak ayarlar. 
+   Bu, padding ve border'ın elementin toplam genişliği ve yüksekliğine dahil edilmesini sağlar. */
+
 body {
   font-family: "Poppins", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  overflow: hidden;
+  /* Tüm metinlerin "Poppins" font ailesiyle yazılmasını sağlar; eğer "Poppins" yüklenmezse, sans-serif kullanılacaktır. */
 
+  display: flex;
+  /* Body elementini bir flex container yapar. */
+
+  justify-content: center;
+  /* İçerikleri yatay yönde merkeze hizalar. */
+
+  align-items: center;
+  /* İçerikleri dikey yönde merkeze hizalar. */
+
+  height: 100vh;
+  /* Body elementinin yüksekliğini, viewport yüksekliğinin %100'ü olarak ayarlar. */
+
+  margin: 0;
+  /* Body elementinin dış boşluklarını sıfırlar. */
+
+  overflow: hidden;
+  /* Taşan içeriğin görünmesini engeller, özellikle yatay ve dikey yönde kaydırma çubuklarını gizler. */
 }
+
 .bg {
   background: no-repeat center/cover
     url("https://sungerboboyunlarioyna.wordpress.com/wp-content/uploads/2015/12/sungerbob.png");
+  /* Arka planı merkezde olacak şekilde ve elementin tamamını kaplayacak şekilde (`cover`) ayarlar. 
+     Arka plan resmi olarak verilen URL'deki Sünger Bob görselini kullanır. */
+
   position: absolute;
+  /* Elementi, normal belge akışının dışına çıkarır ve parent elementine göre konumlandırır. */
+
   top: 50%;
+  /* Üst kenarını, parent elementinin yüksekliğinin %50'sine hizalar. */
+
   left: 50%;
+  /* Sol kenarını, parent elementinin genişliğinin %50'sine hizalar. */
+
   transform: translate(-50%, -50%);
+  /* Elementi, kendi genişliğinin ve yüksekliğinin %50'si kadar sola ve yukarıya kaydırır, böylece element tam olarak merkezde olur. */
+
   height: 50vh;
+  /* Elementin yüksekliğini, viewport yüksekliğinin %50'si olarak ayarlar. */
+
   width: 50vw;
+  /* Elementin genişliğini, viewport genişliğinin %50'si olarak ayarlar. */
+
   max-width: 100%;
+  /* Elementin maksimum genişliğini, parent elementinin genişliğiyle sınırlar (taşma olmaz). */
+
   max-height: 100%;
+  /* Elementin maksimum yüksekliğini, parent elementinin yüksekliğiyle sınırlar (taşma olmaz). */
+
   z-index: -1;
+  /* Elementin z-index'ini -1 olarak ayarlar, böylece diğer içeriklerin arkasında kalır. */
+
   filter: blur(0px);
+  /* Elemente bulanıklık filtresi uygular; başlangıçta bulanıklık 0 piksel olarak ayarlanmıştır, yani net görünür. */
 }
+
 .loading-text {
   color: #f5d703;
+  /* Metin rengini parlak sarı olarak ayarlar. */
+
   font-size: 100px;
+  /* Metin boyutunu 100 piksel olarak ayarlar, oldukça büyük bir metin. */
 }
