@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+/* Tüm elementler için `box-sizing` özelliğini `border-box` olarak ayarlar. Bu, padding ve border'ın elementin toplam genişliği ve yüksekliğine dahil edilmesini sağlar. */
+
+body{
+    font-family: "Lato", sans-serif;
+    /* Metinlerin "Lato" font ailesiyle yazılmasını sağlar; eğer "Lato" yüklenmezse, sans-serif kullanılacaktır. */
+    
+    background-color: #CBE2B5;
+    /* Sayfa arka plan rengini açık yeşilimsi bir ton olarak ayarlar. */
+
+    display: flex;
+    /* Body elementini bir flex container yapar. */
+
+    flex-direction: column;
+    /* Flex yönünü dikey (üstten alta) olacak şekilde ayarlar. */
+
+    justify-content: center;
+    /* İçerikleri dikey yönde merkeze hizalar. */
+
+    align-items: center;
+    /* İçerikleri yatay yönde merkeze hizalar. */
+
+    margin: 0;
+    /* Body elementine herhangi bir dış boşluk (margin) eklemez. */
+
+    overflow-x: hidden;
+    /* Yatay kaydırma çubuğunu gizler, içerik taşsa bile. */
+}
+
+h1{
+    margin: 10px;
+    /* H1 başlığına 10 piksel dış boşluk ekler. */
+
+    color: #A28B55;
+    /* H1 başlığının rengini kahverengimsi bir ton olarak ayarlar. */
+}
+
+.box{
+    background-color: #86AB89;
+    /* Kutunun arka plan rengini yeşilimsi bir ton olarak ayarlar. */
+
+    display: flex;
+    /* Kutuyu bir flex container yapar. */
+
+    align-items: center;
+    /* İçerikleri dikey yönde ortalar. */
+
+    justify-content: center;
+    /* İçerikleri yatay yönde ortalar. */
+
+    width: 400px;
+    /* Kutunun genişliğini 400 piksel olarak ayarlar. */
+
+    height: 200px;
+    /* Kutunun yüksekliğini 200 piksel olarak ayarlar. */
+
+    margin: 10px;
+    /* Kutunun etrafına 10 piksel dış boşluk ekler. */
+
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    /* Kutunun etrafına siyah bir gölge ekler, 3 piksel sağa, 3 piksel aşağı ve 10 piksel bulanıklıkla. */
+
+    border: 5px solid #A28B55;
+    /* Kutunun etrafına 5 piksel genişliğinde, kahverengimsi bir tonla çerçeve ekler. */
+
+    transform: translateX(400%);
+    /* Kutuyu yatay olarak %400 dışarı taşır, yani başlangıçta görünmez hale getirir. */
+
+    transition: transform 1s ease;
+    /* Kutunun `transform` özelliğinde meydana gelen değişikliklerin 1 saniye içinde, yumuşak bir geçişle olmasını sağlar. */
+
+    border-radius: 25px;
+    /* Kutunun kenarlarını 25 piksel olacak şekilde yuvarlatır. */
+}
+
+.box:nth-last-of-type(even){
+    transform: translateX(-400%);
+}
+/* Sondan başlayarak çift (even) sıralı kutulara uygulanır, bu kutuları başlangıçta ekranın soluna doğru %400 dışarı taşır. */
+
+.box.show{
+    transform: translateX(0);
+}
+/* .show sınıfı eklenen kutuların translateX değerini 0 yaparak onları ekrana getirir. */
+
+.box h2{
+    font-size: 35px;
+}
+/* Kutunun içindeki h2 başlığının yazı boyutunu 35 piksel olarak ayarlar. */
