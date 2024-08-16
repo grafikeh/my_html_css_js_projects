@@ -1,113 +1,149 @@
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap");
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Tüm elementlerin box-sizing özelliğini border-box olarak ayarlar */
 }
-body {
-  font-family: "dosis", sans-serif;
-  background-color: #333;
-  color: #222;
-  margin: 0;
-  overflow-x: hidden;
 
+body {
+  font-family: "dosis", sans-serif; /* Yazı tipi olarak "Dosis" ve yedek olarak sans-serif kullanır */
+  background-color: #333; /* Arka plan rengini koyu gri (#333) yapar */
+  color: #222; /* Metin rengini koyu gri (#222) yapar */
+  margin: 0; /* Body etrafındaki tüm varsayılan marginleri sıfırlar */
+  overflow-x: hidden; /* Yatay kaydırmayı gizler */
 }
+
 .container {
-  background-color: #fafafa;
-  transform-origin: top left;
-  transition: transform 0.5s linear;
-  width: 100vw;
-  min-height: 100vh;
-  padding: 50px;
+  background-color: #fafafa; /* Arka plan rengini açık gri (#fafafa) yapar */
+  transform-origin: top left; /* Transform işleminin başlangıç noktasını sol üst köşe olarak ayarlar */
+  transition: transform 0.5s linear; /* Transform işleminin geçişini 0.5 saniyelik lineer bir animasyonla yapar */
+  width: 100vw; /* Genişliği viewport genişliğine eşitler */
+  min-height: 100vh; /* Minimum yüksekliği viewport yüksekliğine eşitler */
+  padding: 50px; /* İçerik etrafında 50px padding ekler */
 }
+
 .container.show-nav {
-  transform: rotate(-20deg);
+  transform: rotate(
+    -20deg
+  ); /* .show-nav sınıfı eklendiğinde container'ı -20 derece döndürür */
 }
+
 .circle-container {
-  position: fixed;
-  top: -100px;
-  left: -100px;
+  position: fixed; /* Konumunu sabitler, ekran kaydırıldığında yerini korur */
+  top: -100px; /* Üstten -100px kaydırır */
+  left: -100px; /* Soldan -100px kaydırır */
 }
 
 .circle {
-  background-color: rgb(13, 157, 186);
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  position: relative;
-  transition: transform 0.5s linear;
+  background-color: rgb(
+    13,
+    157,
+    186
+  ); /* Arka plan rengini mavi (rgb(13, 157, 186)) yapar */
+  height: 200px; /* Yüksekliği 200px yapar */
+  width: 200px; /* Genişliği 200px yapar */
+  border-radius: 50%; /* Elemanı daire şeklinde yapmak için köşe yarıçapını %50 yapar */
+  position: relative; /* Konumlandırmayı parent elemana göre ayarlar */
+  transition: transform 0.5s linear; /* Transform işleminin geçişini 0.5 saniyelik lineer bir animasyonla yapar */
 }
+
 .circle button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: 100px;
-  background-color: transparent;
-  color: #fff;
-  border: none;
-  font-size: 26px;
-  cursor: pointer;
+  position: absolute; /* Butonun konumunu daire içinde mutlak olarak ayarlar */
+  top: 50%; /* Dairenin üstünden %50 aşağıya yerleştirir */
+  left: 50%; /* Dairenin solundan %50 sağa yerleştirir */
+  height: 100px; /* Butonun yüksekliğini 100px yapar */
+  background-color: transparent; /* Butonun arka planını şeffaf yapar */
+  color: #fff; /* Buton metin rengini beyaz yapar */
+  border: none; /* Butonun sınır çizgisini kaldırır */
+  font-size: 26px; /* Yazı boyutunu 26px yapar */
+  cursor: pointer; /* Fare butonun üzerindeyken imleci el şeklinde yapar */
 }
+
 .circle button:focus {
-  outline: none;
+  outline: none; /* Buton odaklandığında dış hat çizgisi eklemez */
 }
+
 .circle button#open {
-  left: 60%;
+  left: 60%; /* "open" butonunu soldan %60 konumlandırır */
 }
+
 .circle button#close {
-  top: 60%;
-  transform: rotate(90deg);
-  transform-origin: top left;
+  top: 60%; /* "close" butonunu üstten %60 konumlandırır */
+  transform: rotate(90deg); /* "close" butonunu 90 derece döndürür */
+  transform-origin: top left; /* Döndürme işleminin başlangıç noktasını sol üst köşe olarak ayarlar */
 }
+
 .container.show-nav .circle {
-  transform: rotate(-70deg);
+  transform: rotate(
+    -70deg
+  ); /* .show-nav sınıfı eklendiğinde daireyi -70 derece döndürür */
 }
+
 .content {
-  max-width: 1000px;
-  margin: 50px auto;
+  max-width: 1000px; /* İçeriğin maksimum genişliğini 1000px ile sınırlar */
+  margin: 50px auto; /* İçeriği ortalar ve üstten 50px margin ekler */
 }
+
 .content h1 {
-  margin: 0;
+  margin: 0; /* Başlık etrafındaki varsayılan marginleri sıfırlar */
 }
+
 .content small {
-  color: #777;
+  color: #777; /* Yazı rengini orta gri (#777) yapar */
 }
+
 .content p {
-  color: #333;
-  line-height: 1.5;
+  color: #333; /* Paragraf metin rengini koyu gri (#333) yapar */
+  line-height: 1.5; /* Satır yüksekliğini 1.5 katı yapar */
 }
+
 .content img {
-  max-width: 100%;
+  max-width: 100%; /* Görselin maksimum genişliğini %100 yapar */
 }
+
 nav {
-  position: fixed;
-  bottom: 25%;
-  left: 0;
-  z-index: 100;
-  cursor: pointer;
+  position: fixed; /* Konumunu sabitler, ekran kaydırıldığında yerini korur */
+  bottom: 25%; /* Ekranın altından %25 yukarıya yerleştirir */
+  left: 0; /* Sol tarafa hizalar */
+  z-index: 100; /* Z-index değeri ile diğer elementlerin üzerinde görünmesini sağlar */
+  cursor: pointer; /* Fare navigasyonun üzerindeyken imleci el şeklinde yapar */
 }
+
 nav ul {
-  list-style: none;
-  padding-left: 30px;
+  list-style: none; /* Liste ögeleri için varsayılan madde işaretlerini kaldırır */
+  padding-left: 30px; /* Soldan 30px padding ekler */
 }
+
 nav ul li {
-  text-transform: uppercase;
-  color: #fff;
-  margin: 40px 0;
-  transform: translateX(-100%);
-  transition: transform 0.4s ease-in;
+  text-transform: uppercase; /* Liste elemanlarındaki metni büyük harfe çevirir */
+  color: #fff; /* Metin rengini beyaz yapar */
+  margin: 40px 0; /* Her bir liste elemanı arasında üstten ve alttan 40px boşluk bırakır */
+  transform: translateX(
+    -100%
+  ); /* Her bir liste elemanını yatayda %100 sola kaydırır (gizler) */
+  transition: transform 0.4s ease-in; /* Transform işleminin geçişini 0.4 saniyelik ease-in animasyonla yapar */
 }
+
 nav ul li + li {
-  margin-left: 15px;
-  transform: translateX(-150%);
+  margin-left: 15px; /* İkinci ve sonraki liste elemanlarına soldan 15px margin ekler */
+  transform: translateX(
+    -150%
+  ); /* İkinci ve sonraki liste elemanlarını yatayda %150 sola kaydırır (gizler) */
 }
-nav ul li + li + li{
-  margin: 30px;
-  transform: translateX(-200%);
+
+nav ul li + li + li {
+  margin: 30px; /* Üçüncü ve sonraki liste elemanlarına 30px margin ekler */
+  transform: translateX(
+    -200%
+  ); /* Üçüncü ve sonraki liste elemanlarını yatayda %200 sola kaydırır (gizler) */
 }
-.container.show-nav + nav li{
-    transform: translateX(0);
-    transition-delay: 0.3s;
+
+.container.show-nav + nav li {
+  transform: translateX(
+    0
+  ); /* .show-nav sınıfı eklendiğinde liste elemanlarını orijinal konumuna getirir (gösterir) */
+  transition-delay: 0.3s; /* Geçiş animasyonunu 0.3 saniye geciktirir */
 }
-.fa-solid{
-    margin-right: 10px;
+
+.fa-solid {
+  margin-right: 10px; /* Font Awesome ikonları için sağ tarafa 10px boşluk bırakır */
 }
